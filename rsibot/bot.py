@@ -1,4 +1,4 @@
-import websocket, json, pprint, talib, numpy
+import websocket, json, pprint, numpy#,talib
 import config
 from binance.client import Client
 from binance.enums import *
@@ -54,7 +54,8 @@ def on_message(ws, message):
 
         if len(closes) > RSI_PERIOD:
             np_closes = numpy.array(closes)
-            rsi = talib.RSI(np_closes, RSI_PERIOD)
+            rsi=55.000
+#            rsi = talib.RSI(np_closes, RSI_PERIOD)
             print("all rsis calculated so far")
             print(rsi)
             last_rsi = rsi[-1]
